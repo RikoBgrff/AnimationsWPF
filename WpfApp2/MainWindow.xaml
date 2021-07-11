@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Animation" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+    <Grid>
+        <Canvas>
+            
+            <Button Background="Red" Content="A" Height="50" HorizontalAlignment="Left" Margin="50,250,0,0" Name="buttonAnimate1" VerticalAlignment="Top" Width="75">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation From="0" To="200" Duration="0:0:2" Storyboard.TargetProperty="(Canvas.Left)" AutoReverse="False" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Canvas>
+        <Canvas>
+            <Button Background="Green" Content="B" Height="50" HorizontalAlignment="Center" Margin="300,0,250,0" Name="buttonAnimate2" VerticalAlignment="Top" Width="75">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation From="0" To="190" Duration="0:0:2" Storyboard.TargetProperty="(Canvas.Top)" AutoReverse="False" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Canvas>
+        <Canvas>
+            <Button Background="Blue" Content="C" Height="50" HorizontalAlignment="Center" Margin="50,250,0,50" Name="buttonAnimate3" VerticalAlignment="Top" Width="75" >
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation From="0" To="360" Duration="0:0:2" Storyboard.TargetProperty="(Canvas.Right)" AutoReverse="False" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Canvas>
+     
+    </Grid>
+</Window>
